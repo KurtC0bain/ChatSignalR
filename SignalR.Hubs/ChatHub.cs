@@ -18,6 +18,5 @@ namespace ChatSignalR.SignalR.Hubs
             var userLeftChatMessage = $"{userName} left the chat :(";
             await Clients.All.SendAsync("userLeftChat", userLeftChatMessage);
         }
-
     }
 }
