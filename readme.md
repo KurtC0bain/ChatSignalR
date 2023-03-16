@@ -1,0 +1,24 @@
+
+# Chat Application SignalR 💬
+
+**The task was:**
+
+It should be a client-server application (or two independent applications: server and index.html file with some scripting) written in any language and hosted somewhere (localhost is OK too).
+
+User should be able to choose his name, change it anytime, and post any text message to the chat.
+
+Do not store messages on the server.
+Use web sockets to connect to the server and get and send messages to other users.
+
+
+
+## Demo
+
+**Demo of chat**
+
+![alt text](https://lh3.googleusercontent.com/nmHwc1C-OPF-PI3A1EvTUU9WCrQGnmnbNE2yZLiECMx2VgQ58mL5E-z9whvFQTXpDj1BbdBEP5PY08rDHLrLrx6jwsKakj3WJhdhKo1mJpJdRSirFQoSivTSnA-S-zCcM9Cvs2cHYMGkf0StX7DUdGezqOdmvq60Et7twLIBIncABSkVoFcDM3d1YZyKW8DY_ExW65Jly1jB0RFFxXTIY9ujIYshACgQoVkAkVluJ4j9CW23lOP_qik5t5yeSTzQ0R83pDdlBvzKntqckxccq0LXELWeFB60UhufqRP8mbohDLJU0piqlhxVAlDQB0do7V9ZVqJY_kUxGEewaQy3mC1_ytQKcMX6LenWS5BiX-hdInepf_HUuqEETClOJxn0HAHo9cX5Q1wRFdwp6FK6dr0hYngI8AY7kmnCrHimB3M3runM53WmqEqq5BlIHva_qF5Vn31dJZ7vx6FqBNyaTRa779y4shLJDpuAdXjo2Arwv4ETAnZZ1gry_asMYpxVBe3ng9A4VyPtyEdtPptI2GwmBUagr4KAjJH0KllyJkb5PK5vY21kRGYVXVRxj5ofsyv3B6nhMObtKJ36801pKOImMpiFMdgRAnHbTUqFaZi0e8DoLfLtvxQskw5TuXoFn6GppKGIFS_YwcEpyk_8xeRDmoQnOEEGbF4UY3Uvwl1C9F4Lb_mh0N0omjm280v-POroJS34Ki2CRXlSSCpBqjT1VOmGtFPylbP7o78Mf4sWGhS-pEAF8-5GwWNwLfqtR7x3K4kfKYbneBL0XOek7f6dI2bu0qIg51SMPi9sPeX-N3SxnDBPo5s0cTD3zLAkLzSB9ksVnFwyeEk2J0UJXV0312GY7G4Nc7wq6FeAn-DgyxWR2lTpBP1lLwv9PAA258tmpaa9WkjnFMaYlPHxnsyaD_ZlIYhtXzavgdHz7J2SNLCPLhzO9xXK4XhPjnC_5BXkHwNRPmQKZ5sj6da1Bk3ILzW5viIEZZKFk6Qqhur1eFxPTY1r-RKdSHZd-Ywss1oJsrt1pfjOhPmbfFmyMQYDxSwQ3sHz7Ar8tBKqjWdcwp2Pr3lo5VrbaFjZlvDCadOvaD6YizuI9pW1bLc4ajK1pECGgW7dZw=w1829-h962-no?authuser=0)
+
+## Authors
+
+- [@KurtC0bain](https://www.github.com/octokatherine) - Maksym Pishchuk
+
