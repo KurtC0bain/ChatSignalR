@@ -13,9 +13,10 @@ namespace ChatSignalR.SignalR.Hubs
             var userJoinedMessage = $"{userName} just joined the chat!";
             await Clients.All.SendAsync("userJoinedMessage", userJoinedMessage);
         }
-        public async Task ChangeUserName(string userName, string message)
+        public async Task UserLeftChat(string userName)
         {
-            await Clients.All.SendAsync("changeUserName", message);
+            var userLeftChatMessage = $"{userName} left the chat :(";
+            await Clients.All.SendAsync("userLeftChat", userLeftChatMessage);
         }
 
     }

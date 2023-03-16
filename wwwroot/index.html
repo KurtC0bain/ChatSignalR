@@ -53,6 +53,9 @@
 
             // Start the connection.
 
+            window.addEventListener("beforeunload", () => {
+                connection.invoke('userLeftChat', name);
+            });
 
             function formatDate(date) {
                 const h = "0" + date.getHours();
@@ -82,7 +85,7 @@
                 messageInput.focus();
                 event.preventDefault();
             };
-            function onChangeName(event) {
+            function onChangeName() {
                 name = prompt('Enter your name:', 'user');
                 if (name === null) {
                     name = 'user';
@@ -136,6 +139,25 @@
                     msgerChat.scrollTop += 500;
 
                 });
+            connection.on('userLeftChat',
+                function (message) {
+                    var encodedMsg = message;
+                    // Add the message to the page.
+                    var msgHtml = `
+                            <div class="msg left-msg">
+                                <div class="msg-img" style="background-image: url(${adminIcon})"></div>
+                                <div class="msg-bubble">
+                                    <div class="msg-info">
+                                        <div class="msg-info-name"> <strong>CHAT</strong></div>
+                                    </div>
+                                    <div class="msg-text">${encodedMsg}</div>
+                                </div>
+                            </div>
+                            `;
+                    msgerChat.insertAdjacentHTML("beforeend", msgHtml);
+                    msgerChat.scrollTop += 500;
+                });
+
 
             // Transport fallback functionality is now built into start.
             connection.start()
@@ -149,8 +171,8 @@
                             return false;
                         });
                     document.getElementById('changeName').addEventListener('click',
-                        function (event) {
-                            onChangeName(event);
+                        function () {
+                            onChangeName();
                         });
                 })
                 .then(onUserJoined)
