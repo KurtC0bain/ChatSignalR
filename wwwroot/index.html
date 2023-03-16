@@ -3,26 +3,28 @@
 <body>
     <link rel="stylesheet" href="css/site.css">
 
-<section class="msger">
+    <section class="msger">
 
-    <header class="msger-header">
-        <div class="msger-header-title">
-            <i class="fas fa-comment-alt"></i> SimpleChat
-        </div>
-        <div class="msger-header-options">
-            <span><i class="fas fa-cog"></i></span>
-        </div>
-    </header>
+        <header class="msger-header">
+            <div class="msger-header-title">
+                <i class="fas fa-comment-alt"></i> SimpleChat
+            </div>
+            <div class="msger-header-options">
+                <span><i class="fas fa-cog"></i></span>
+            </div>
+        </header>
 
-    <main class="msger-chat">
+        <main class="msger-chat">
 
-    </main>
+        </main>
 
-    <form id="messageSubmit" class="msger-inputarea">
-        <input id="message" type="text" class="msger-input" placeholder="Enter your message...">
-        <button id="sendMessage" type="button" class="msger-send-btn">Send</button>
-    </form>
-</section>
+        <form id="messageSubmit" class="msger-inputarea">
+            <input id="message" type="text" class="msger-input" placeholder="Enter your message..." required>
+            <button id="sendMessage" type="button" class="msger-send-btn">Send</button>
+        </form>
+        <button id="changeName" type="button" class="msger-send-btn">Change Name</button>
+
+    </section>
 
 
 <script type="text/javascript" src="lib/signalr/signalr.min.js"></script>
@@ -42,7 +44,10 @@
 
             var messageInput = document.getElementById('message');
 
-            var name = prompt('Enter your name:', '');
+            var name = prompt('Enter your name:', 'user');
+            if (name === null) {
+                name = 'user'; //break out of the function early
+            }
             // Set initial focus to message input box.
             messageInput.focus();
 
@@ -62,7 +67,13 @@
                 connection.invoke('userJoinedMessage', name, messageInput.value);
             };
 
-            function onSubmit (event) {
+            function onSubmit(event) {
+                console.log("ready to send");
+                if (message.value === '') {
+                    
+                    alert("Please enter a message!");
+                    return false;
+                }
                 // Call the Send method on the hub.
                 connection.invoke('sendMessage', name, messageInput.value);
 
@@ -71,6 +82,12 @@
                 messageInput.focus();
                 event.preventDefault();
             };
+            function onChangeName(event) {
+                name = prompt('Enter your name:', 'user');
+                if (name === null) {
+                    name = 'user';
+                }
+            }
 
 
             // Create a function that the hub can call to broadcast messages.
@@ -130,6 +147,10 @@
                         function(event) {
                             onSubmit(event);
                             return false;
+                        });
+                    document.getElementById('changeName').addEventListener('click',
+                        function (event) {
+                            onChangeName(event);
                         });
                 })
                 .then(onUserJoined)
