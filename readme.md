@@ -16,7 +16,7 @@ Use web sockets to connect to the server and get and send messages to other user
 
 **Demo of chat**
 
-![alt text](https://drive.google.com/file/d/1o_PWdxZhy2rGz9Hr7m_LwrcPMaQxbBsd/view?usp=share_link)
+![alt text](https://snipboard.io/0Dls9K.jpg)
 
 ## Authors
 
